@@ -6,7 +6,7 @@ import requests
 from dotenv import load_dotenv
 
 
-def get_env():
+def get_env():  # THIS IS FLAWED! WHAT IF YOU NEED MULTIPLE THINGS FROM THE .env?!
 
     load_dotenv()
 
@@ -22,6 +22,10 @@ headers = {
 }
 
 url = "https://api.vrchat.cloud/api/1/users"
+
+# THIS DOES NOT RETURN ACTIVE PLAYERS, I EITHER NEED TO FIGURE OUT THE VRCHAT API IF THIS EVEN EXISTS! OR I NEED TO USE ActivePlayer.io, SteamDB and Tracker.gg
+# ActivePlayer.io is best for all platforms, SteamDB or just the steam API is best for pulling steam!
+# Can do ActivePlayer.io count - SteamDB = Other patforms (quest and pico...etc...)
 
 if not vrchat_token:
     print("YO! Your VECHAT_TOKEN is empty. CHECK YOUR DAMN .env FILE")
